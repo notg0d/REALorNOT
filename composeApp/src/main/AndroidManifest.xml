@@ -14,8 +14,7 @@
         android:label="REALorNOT"
         android:supportsRtl="true"
         android:theme="@style/Theme.REALorNOT"
-        android:largeHeap="true"
-        android:extractNativeLibs="true">
+        android:largeHeap="true">
 
         <activity
             android:name=".MainActivity"

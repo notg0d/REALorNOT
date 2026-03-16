@@ -237,14 +237,14 @@ fun ScanResultScreen(
                 Spacer(Modifier.width(12.dp))
                 Column {
                     Text(
-                        if (isReal) "Authentic Media" else "Deepfake Detected",
+                        if (isReal) "Authentic Media" else "AI content Detected",
                         fontFamily = SpaceGrotesk,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.SemiBold,
                         color = TextWhite,
                     )
                     Text(
-                        if (isReal) "No deepfake manipulation detected" else "AI-generated content detected",
+                        if (isReal) "No AI manipulation detected" else "AI-generated content detected",
                         fontFamily = DmSans,
                         fontSize = 12.sp,
                         color = TextMuted,

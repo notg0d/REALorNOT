@@ -90,7 +90,7 @@ fun DashboardScreen(
             )
             Spacer(Modifier.height(12.dp))
             Text(
-                "Detect AI-generated images, videos and audio with on-device machine learning.",
+                "Detect AI-generated images, videos and audio with machine learning.",
                 fontFamily = DmSans,
                 fontSize = 13.sp,
                 color = TextDim,

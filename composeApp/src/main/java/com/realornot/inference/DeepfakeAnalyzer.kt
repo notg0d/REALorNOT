@@ -30,7 +30,7 @@ data class AnalysisResult(
 class DeepfakeAnalyzer(private val context: Context) {
 
     companion object {
-        private const val MODEL_NAME = "gemini-2.5-flash"
+        private const val MODEL_NAME = "Detective-v1"
         private const val FRAMES_PER_VIDEO = 16
 
         // ── IMAGE FORENSIC PROMPT ──────────────────────────────────────
@@ -197,7 +197,7 @@ You MUST respond with ONLY valid JSON (no markdown):
         bitmap.recycle()
 
         onProgress(0.90f, "Parsing forensic report…")
-        return parseGeminiResponse(response.text, "Gemini 2.5 Flash (Image)", t0)
+        return parseGeminiResponse(response.text, "Detective-v1 (Image)", t0)
     }
 
     // ═════════════════════════════════════════════════════════════════
@@ -226,7 +226,7 @@ You MUST respond with ONLY valid JSON (no markdown):
             }
         )
         frames.forEach { it.recycle() }
-        val visualResult = parseGeminiResponse(visualResponse.text, "Gemini 2.5 Flash", t0)
+        val visualResult = parseGeminiResponse(visualResponse.text, "Detective-v1 (Video)", t0)
 
         onProgress(0.60f, "Analyzing audio track for voice cloning…")
         var audioVerdict = "N/A"
@@ -241,7 +241,7 @@ You MUST respond with ONLY valid JSON (no markdown):
                         text(AUDIO_FORENSIC_PROMPT)
                     }
                 )
-                val audioResult = parseGeminiResponse(audioResp.text, "Gemini 2.5 Flash", t0)
+                val audioResult = parseGeminiResponse(audioResp.text, "Detective-v1 (Audio)", t0)
                 audioVerdict = audioResult.verdict
                 audioConf = audioResult.confidence
                 mergedReasoning = "🎬 Visual Analysis: ${visualResult.reasoning}\n\n🔊 Audio Analysis: ${audioResult.reasoning}"
@@ -300,7 +300,7 @@ You MUST respond with ONLY valid JSON (no markdown):
 
     private fun parseGeminiResponse(responseText: String?, modelUsed: String, t0: Long): AnalysisResult {
         if (responseText == null) {
-            return AnalysisResult("REAL", 50f, modelUsed, System.currentTimeMillis() - t0, reasoning = "API returned an empty response.")
+            return AnalysisResult("REAL", 50f, modelUsed, System.currentTimeMillis() - t0, reasoning = "Please Try Again")
         }
 
         return try {
