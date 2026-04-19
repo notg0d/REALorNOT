@@ -97,19 +97,19 @@ cd p1
 ┌────────────────────────────────────────────────────────┐
 │                    REALorNOT App                       │
 │                                                        │
-│  ┌──────────┐   ┌──────────────┐   ┌───────────────┐  │
-│  │  UI Layer │──▶│ ViewModel    │──▶│   Inference    │  │
-│  │ (Compose) │   │ (ScanState)  │   │   Engine       │  │
-│  └──────────┘   └──────────────┘   └───────┬───────┘  │
+│  ┌──────────┐   ┌──────────────┐   ┌───────────────┐   │
+│  │  UI Layer │──▶│ ViewModel    │──▶│   Inference │   │
+│  │ (Compose) │   │ (ScanState)  │   │   Engine     │   │
+│  └──────────┘   └──────────────┘   └───────┬───────┘   │
 │        │                                    │          │
 │        │         ┌──────────────┐           │          │
 │        │         │  Room DB     │           │          │
-│        └────────▶│  (History)   │           │          │
+│        └────────▶│  (History)   │           │         │
 │                  └──────────────┘           │          │
 │                                             ▼          │
 │                                   ┌─────────────────┐  │
-│                                   │  API Key Manager │  │
-│                                   │  (AES-256)       │  │
+│                                   │  API Key Manager│  │
+│                                   │  (AES-256)      │  │
 │                                   └────────┬────────┘  │
 └────────────────────────────────────────────┼───────────┘
                                              │
@@ -166,7 +166,7 @@ User selects video
         ▼
   ┌─────────────────────────────────────────┐
   │         PARALLEL ANALYSIS               │
-  │                                          │
+  │                                         │
   │  Track 1: VISUAL                        │
   │  ├── Extract 16 evenly-spaced frames    │
   │  ├── Send all frames to Gemini          │
@@ -176,7 +176,7 @@ User selects video
   │      • Blinking patterns                │
   │      • Face-neck boundary artifacts     │
   │      • Head pose vs face alignment      │
-  │                                          │
+  │                                         │
   │  Track 2: AUDIO                         │
   │  ├── Read full video file bytes         │
   │  ├── Send as video/mp4 blob to Gemini   │
