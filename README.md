@@ -61,7 +61,7 @@ The app performs **multi-layer forensic analysis** by sending media files to the
 #### Option 2: Build from Source
 ```bash
 # Clone the repository
-git clone https://github.com/notg0d/p1.git
+git clone https://github.com/notg0d/REALorNOT.git
 cd p1
 
 # Build the release APK
