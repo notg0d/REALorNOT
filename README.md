@@ -33,13 +33,9 @@ The app performs **multi-layer forensic analysis** by sending media files to the
 | 📊 **Confidence Scoring** | 0–100% confidence score with detailed forensic reasoning |
 | 📜 **Scan History** | All past scans saved locally with Room database |
 | 🔐 **Secure API Key Storage** | AES-256 encrypted key storage via Android EncryptedSharedPreferences |
-| 🎨 **Modern UI** | Dark theme with sage-green palette, spring animations, and a gooey physics tab bar |
 
 ---
 
-## 📱 Screenshots
-
-> The app features a dark-themed UI with a sage-green accent palette, animated scanning indicators, and detailed forensic result screens.
 
 ---
 
